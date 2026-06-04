@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحليل بلاغات 937 — 28 مايو إلى 3 يونيو 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f5f6fa;font-family:'Segoe UI',Tahoma,Arial,sans-serif;direction:rtl;color:#1a1a2e;min-height:100vh}
+.page-wrap{max-width:1100px;margin:0 auto;padding:1.5rem 1rem}
+.page-header{background:#1B3A6B;color:#fff;border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.page-header h1{font-size:17px;font-weight:600}
+.page-header span{font-size:12px;opacity:.8;background:rgba(255,255,255,.15);padding:4px 12px;border-radius:20px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem;background:#fff;border-radius:12px;padding:12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.nav-btn{font-size:12px;padding:7px 13px;border-radius:8px;border:1px solid #e0e4ef;background:#fff;color:#555;cursor:pointer;transition:all .15s;white-space:nowrap}
+.nav-btn:hover{background:#f0f4ff;border-color:#b5c4f0}
+.nav-btn.active{background:#1B3A6B;color:#fff;border-color:#1B3A6B}
+.cnt{padding:1px 7px;border-radius:10px;font-size:10px;margin-right:4px;font-weight:600}
+.tab{display:none}.tab.active{display:block}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:1.5rem}
+.kpi{background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid #1B3A6B}
+.kpi-lbl{font-size:11px;color:#888;margin-bottom:5px}
+.kpi-val{font-size:24px;font-weight:700;color:#1a1a2e}
+.kpi-sub{font-size:10px;color:#aaa;margin-top:3px}
+.green{color:#2E7D32}.red{color:#C62828}.amber{color:#E65100}
+.exec-box{background:#fff;border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.exec-title{font-size:14px;font-weight:600;color:#1B3A6B;margin-bottom:1rem;padding-bottom:8px;border-bottom:1px solid #eee}
+.exec-items{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.exec-item{font-size:12px;color:#333;line-height:1.7;padding:10px 12px;background:#f8f9fd;border-right:3px solid #1B3A6B;border-radius:0 6px 6px 0}
+.exec-item.warn{border-right-color:#E24B4A;background:#fff8f8}
+.charts2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.chart-box{background:#fff;border-radius:12px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.chart-full{background:#fff;border-radius:12px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:14px}
+.chart-ttl{font-size:12px;font-weight:600;color:#555;margin-bottom:10px}
+.leg{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;font-size:11px;color:#666}
+.leg span{display:flex;align-items:center;gap:4px}
+.leg-sq{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.dept-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:8px}
+.dept-title{font-size:17px;font-weight:600;color:#1B3A6B}
+.dept-badge{font-size:12px;padding:5px 14px;border-radius:20px;background:#e8eef8;color:#1B3A6B;font-weight:500}
+.pill{display:inline-block;font-size:10px;padding:3px 8px;border-radius:20px;white-space:nowrap;font-weight:500}
+.p-closed{background:#e8f5e9;color:#2E7D32}
+.p-other{background:#f0f0f0;color:#555}
+.p-sat{background:#e8f5e9;color:#2E7D32}.p-unsat{background:#fce4e4;color:#C62828}
+.p-wait{background:#fff3e0;color:#E65100}
+.tbl-wrap{overflow-x:auto;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+table{width:100%;border-collapse:collapse;font-size:12px;background:#fff}
+th{font-weight:600;color:#555;background:#f5f6fa;padding:9px 12px;text-align:right;border-bottom:1px solid #eee;white-space:nowrap}
+td{padding:8px 12px;text-align:right;color:#333;border-bottom:1px solid #f0f0f0;word-break:break-word}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafbff}
+.footer{text-align:center;font-size:11px;color:#aaa;margin-top:2rem;padding-top:1rem;border-top:1px solid #eee}
+@media(max-width:640px){.charts2{grid-template-columns:1fr}.exec-items{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<div id="lock-screen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#f5f6fa;z-index:9999;display:flex;align-items:center;justify-content:center;direction:rtl">
+  <div style="background:#fff;border-radius:16px;padding:2.5rem 2rem;width:320px;box-shadow:0 4px 24px rgba(0,0,0,.10);text-align:center">
+    <div style="width:56px;height:56px;background:#e8eef8;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem">
+      <svg width="26" height="26" fill="none" stroke="#1B3A6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    </div>
+    <div style="font-size:16px;font-weight:700;color:#1B3A6B;margin-bottom:6px">تحليل بلاغات 937</div>
+    <div style="font-size:12px;color:#888;margin-bottom:1.5rem">مستشفى الولادة والأطفال</div>
+    <input id="pwd-input" type="password" placeholder="أدخل كلمة المرور" style="width:100%;padding:10px 14px;border:1.5px solid #dde3f0;border-radius:8px;font-size:14px;direction:rtl;text-align:right;outline:none;margin-bottom:10px;font-family:inherit">
+    <div id="pwd-err" style="font-size:11px;color:#C62828;margin-bottom:8px;min-height:16px"></div>
+    <button onclick="checkPwd()" style="width:100%;padding:10px;background:#1B3A6B;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;font-family:inherit;font-weight:600">دخول</button>
+  </div>
+</div>
+<script>
+document.getElementById('pwd-input').addEventListener('keydown',function(e){if(e.key==='Enter')checkPwd();});
+function checkPwd(){
+  if(document.getElementById('pwd-input').value==='1234567'){
+    document.getElementById('lock-screen').style.display='none';
+  } else {
+    document.getElementById('pwd-err').textContent='كلمة المرور غير صحيحة';
+    document.getElementById('pwd-input').value='';
+    document.getElementById('pwd-input').focus();
+  }
+}
+</script>
+
+<div class="page-wrap">
+<div class="page-header">
+  <h1>تحليل بلاغات 937</h1>
+  <span>28 مايو – 3 يونيو 2026 | مستشفى الولادة والأطفال</span>
+</div>
+
+<div class="nav">
+  <button class="nav-btn active" onclick="showTab('t-ov',this)">نظرة عامة</button>
+  <button class="nav-btn" onclick="showTab('t-tibbi',this)">الإدارة الطبية <span class="cnt" style="background:#e8eef8;color:#1B3A6B">39</span></button>
+  <button class="nav-btn" onclick="showTab('t-tamreed',this)">إدارة التمريض <span class="cnt" style="background:#e8f5e9;color:#2E7D32">4</span></button>
+  <button class="nav-btn" onclick="showTab('t-iltizam',this)">إدارة الالتزام <span class="cnt" style="background:#fff3e0;color:#E65100">3</span></button>
+  <button class="nav-btn" onclick="showTab('t-tashgheel',this)">التشغيل والصيانة <span class="cnt" style="background:#fff3e0;color:#E65100">2</span></button>
+  <button class="nav-btn" onclick="showTab('t-mawared',this)">الموارد الذاتية <span class="cnt" style="background:#fff3e0;color:#E65100">3</span></button>
+  <button class="nav-btn" onclick="showTab('t-ihala',this)">الإحالة الطبية <span class="cnt" style="background:#e8f5e9;color:#2E7D32">1</span></button>
+  <button class="nav-btn" onclick="showTab('t-qanooni',this)">الإدارة القانونية <span class="cnt" style="background:#e8f5e9;color:#2E7D32">1</span></button>
+  <button class="nav-btn" onclick="showTab('t-layakhos',this)">لا يخص المستشفى <span class="cnt" style="background:#f0f0f0;color:#555">4</span></button>
+</div>
+
+<!-- نظرة عامة -->
+<div id="t-ov" class="tab active">
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-lbl">إجمالي البلاغات</div><div class="kpi-val">62</div><div class="kpi-sub">28 مايو – 3 يونيو</div></div>
+    <div class="kpi"><div class="kpi-lbl">نسبة الإغلاق</div><div class="kpi-val green">100%</div><div class="kpi-sub">62 من 62</div></div>
+    <div class="kpi"><div class="kpi-lbl">نسبة الرضا</div><div class="kpi-val green">84.9%</div><div class="kpi-sub">45 من 53</div></div>
+    <div class="kpi"><div class="kpi-lbl">غير راضٍ</div><div class="kpi-val red">15.1%</div><div class="kpi-sub">8 من 53</div></div>
+    <div class="kpi"><div class="kpi-lbl">بانتظار التواصل</div><div class="kpi-val amber">5</div><div class="kpi-sub">بلاغات</div></div>
+  </div>
+  <div class="exec-box">
+    <div class="exec-title">الملخص التنفيذي</div>
+    <div class="exec-items">
+      <div class="exec-item">الإدارة الطبية تستحوذ على 62.9% من البلاغات (39 من 62)</div>
+      <div class="exec-item">طوارئ الأطفال أعلى قسم بـ 15 بلاغ (24.2% من الإجمالي)</div>
+      <div class="exec-item warn">المختبر وبنك الدم: 2 من 4 بلاغات (50%) غير راضٍ</div>
+      <div class="exec-item">31 مايو الأعلى يومياً بـ 15 بلاغ، يليه 1 يونيو بـ 13 بلاغ</div>
+      <div class="exec-item">فترة الصباح (7:30–3:30) استقبلت 45 بلاغ (72.6% من الإجمالي)</div>
+      <div class="exec-item">5 بلاغات بانتظار التواصل (8.1% من الإجمالي)</div>
+    </div>
+  </div>
+  <div class="charts2">
+    <div class="chart-box"><div class="chart-ttl">البلاغات يومياً</div><div style="position:relative;height:180px"><canvas id="ov-daily" role="img" aria-label="البلاغات يومياً"></canvas></div></div>
+    <div class="chart-box"><div class="chart-ttl">توزيع الإدارات</div><div style="position:relative;height:180px"><canvas id="ov-dept" role="img" aria-label="توزيع الإدارات"></canvas></div></div>
+  </div>
+  <div class="charts2">
+    <div class="chart-box">
+      <div class="chart-ttl">حالة البلاغات</div>
+      <div class="leg">
+        <span><span class="leg-sq" style="background:#2E7D32"></span>مغلق (57)</span>
+        <span><span class="leg-sq" style="background:#E65100"></span>بانتظار التواصل (5)</span>
+      </div>
+      <div style="position:relative;height:150px"><canvas id="ov-status" role="img" aria-label="حالة البلاغات"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <div class="chart-ttl">رضا المستفيدين</div>
+      <div class="leg">
+        <span><span class="leg-sq" style="background:#2E7D32"></span>راضٍ (45)</span>
+        <span><span class="leg-sq" style="background:#E24B4A"></span>غير راضٍ (8)</span>
+        <span><span class="leg-sq" style="background:#E65100"></span>بانتظار (5)</span>
+        <span><span class="leg-sq" style="background:#888"></span>لا يخص (4)</span>
+      </div>
+      <div style="position:relative;height:150px"><canvas id="ov-sat" role="img" aria-label="رضا المستفيدين"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- الإدارة الطبية -->
+<div id="t-tibbi" class="tab">
+  <div class="dept-header"><div class="dept-title">الإدارة الطبية</div><div class="dept-badge">39 بلاغ — 62.9% من الإجمالي</div></div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-lbl">عدد البلاغات</div><div class="kpi-val">39</div></div>
+    <div class="kpi"><div class="kpi-lbl">نسبة الإغلاق</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">راضٍ</div><div class="kpi-val green">82.1%</div><div class="kpi-sub">32 من 39</div></div>
+    <div class="kpi"><div class="kpi-lbl">غير راضٍ</div><div class="kpi-val red">17.9%</div><div class="kpi-sub">7 من 39</div></div>
+  </div>
+  <div class="charts2">
+    <div class="chart-box"><div class="chart-ttl">البلاغات حسب القسم</div><div style="position:relative;height:400px"><canvas id="tb-dept" role="img" aria-label="بلاغات الإدارة الطبية حسب القسم"></canvas></div></div>
+    <div class="chart-box"><div class="chart-ttl">أسباب البلاغات</div><div style="position:relative;height:400px"><canvas id="tb-reason" role="img" aria-label="أسباب بلاغات الإدارة الطبية"></canvas></div></div>
+  </div>
+  <div class="chart-full">
+    <div class="chart-ttl">الرضا حسب القسم (أعلى 6)</div>
+    <div class="leg"><span><span class="leg-sq" style="background:#639922"></span>راضٍ</span><span><span class="leg-sq" style="background:#E24B4A"></span>غير راضٍ</span></div>
+    <div style="position:relative;height:190px"><canvas id="tb-sat" role="img" aria-label="رضا الإدارة الطبية حسب القسم"></canvas></div>
+  </div>
+  <div class="tbl-wrap">
+    <table><colgroup><col style="width:120px"><col style="width:80px"><col style="width:175px"><col style="width:90px"><col style="width:80px"></colgroup>
+    <thead><tr><th>رقم البلاغ</th><th>التاريخ</th><th>القسم</th><th>الحالة</th><th>الرضا</th></tr></thead>
+    <tbody id="tb-rows"></tbody></table>
+  </div>
+</div>
+
+<!-- إدارة التمريض -->
+<div id="t-tamreed" class="tab">
+  <div class="dept-header"><div class="dept-title">إدارة التمريض</div><div class="dept-badge">4 بلاغات — 6.5% من الإجمالي</div></div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-lbl">عدد البلاغات</div><div class="kpi-val">4</div></div>
+    <div class="kpi"><div class="kpi-lbl">نسبة الإغلاق</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">راضٍ</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">غير راضٍ</div><div class="kpi-val">0%</div></div>
+  </div>
+  <div class="charts2">
+    <div class="chart-box"><div class="chart-ttl">البلاغات حسب القسم</div><div style="position:relative;height:160px"><canvas id="tm-dept" role="img" aria-label="بلاغات التمريض حسب القسم"></canvas></div></div>
+    <div class="chart-box"><div class="chart-ttl">أسباب البلاغات</div><div style="position:relative;height:160px"><canvas id="tm-reason" role="img" aria-label="أسباب بلاغات التمريض"></canvas></div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table><colgroup><col style="width:120px"><col style="width:80px"><col style="width:165px"><col style="width:185px"><col style="width:80px"></colgroup>
+    <thead><tr><th>رقم البلاغ</th><th>التاريخ</th><th>القسم</th><th>سبب البلاغ</th><th>الرضا</th></tr></thead>
+    <tbody>
+      <tr><td>B3334983</td><td>27 مايو</td><td>طوارئ النساء</td><td>مشكلات الاستقبال</td><td><span class="pill p-sat">راضي</span></td></tr>
+      <tr><td>B3343518</td><td>29 مايو</td><td>طوارئ الأطفال</td><td>مشكلات الاستقبال</td><td><span class="pill p-sat">راضي</span></td></tr>
+      <tr><td>B3343888</td><td>29 مايو</td><td>طوارئ الأطفال</td><td>تأخر الدخول للعيادات</td><td><span class="pill p-sat">راضي</span></td></tr>
+      <tr><td>B3362549</td><td>1 يونيو</td><td>تنويم ما قبل الولادة</td><td>الرعاية الطبية دون المستوى</td><td><span class="pill p-sat">راضي</span></td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- إدارة الالتزام -->
+<div id="t-iltizam" class="tab">
+  <div class="dept-header"><div class="dept-title">إدارة الالتزام</div><div class="dept-badge">3 بلاغات — 4.8% من الإجمالي</div></div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-lbl">عدد البلاغات</div><div class="kpi-val">3</div></div>
+    <div class="kpi"><div class="kpi-lbl">نسبة الإغلاق</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">راضٍ</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">السبب الرئيسي</div><div class="kpi-val amber" style="font-size:14px">معاملات</div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table><colgroup><col style="width:120px"><col style="width:80px"><col style="width:185px"><col style="width:185px"><col style="width:80px"></colgroup>
+    <thead><tr><th>رقم البلاغ</th><th>التاريخ</th><th>القسم</th><th>سبب البلاغ</th><th>الرضا</th></tr></thead>
+    <tbody>
+      <tr><td>B3356492</td><td>31 مايو</td><td>إدارة الالتزام</td><td>مشكلات معاملات</td><td><span class="pill p-sat">راضي</span></td></tr>
+      <tr><td>B3365906</td><td>1 يونيو</td><td>إدارة الالتزام</td><td>مشكلات معاملات</td><td><span class="pill p-sat">راضي</span></td></tr>
+      <tr><td>B3374272</td><td>2 يونيو</td><td>إدارة الالتزام</td><td>مشكلات معاملات</td><td><span class="pill p-sat">راضي</span></td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- التشغيل والصيانة -->
+<div id="t-tashgheel" class="tab">
+  <div class="dept-header"><div class="dept-title">التشغيل والصيانة</div><div class="dept-badge">2 بلاغات — 3.2% من الإجمالي</div></div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-lbl">عدد البلاغات</div><div class="kpi-val">2</div></div>
+    <div class="kpi"><div class="kpi-lbl">نسبة الإغلاق</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">راضٍ</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">السبب الرئيسي</div><div class="kpi-val amber" style="font-size:14px">النظافة</div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table><colgroup><col style="width:120px"><col style="width:80px"><col style="width:185px"><col style="width:210px"><col style="width:80px"></colgroup>
+    <thead><tr><th>رقم البلاغ</th><th>التاريخ</th><th>القسم</th><th>سبب البلاغ</th><th>الرضا</th></tr></thead>
+    <tbody>
+      <tr><td>B3335221</td><td>27 مايو</td><td>—</td><td>ملاحظات النظافة (المسجد)</td><td><span class="pill p-sat">راضي</span></td></tr>
+      <tr><td>B3354219</td><td>31 مايو</td><td>تنويم ما بعد الولادة</td><td>ملاحظات النظافة (دورات المياه)</td><td><span class="pill p-sat">راضي</span></td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- الموارد الذاتية -->
+<div id="t-mawared" class="tab">
+  <div class="dept-header"><div class="dept-title">الموارد الذاتية</div><div class="dept-badge">3 بلاغات — 4.8% من الإجمالي</div></div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-lbl">عدد البلاغات</div><div class="kpi-val">3</div></div>
+    <div class="kpi"><div class="kpi-lbl">نسبة الإغلاق</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">راضٍ</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">غير راضٍ</div><div class="kpi-val">0%</div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table><colgroup><col style="width:120px"><col style="width:80px"><col style="width:175px"><col style="width:205px"><col style="width:80px"></colgroup>
+    <thead><tr><th>رقم البلاغ</th><th>التاريخ</th><th>القسم</th><th>سبب البلاغ</th><th>الرضا</th></tr></thead>
+    <tbody>
+      <tr><td>B3353192</td><td>31 مايو</td><td>طوارئ النساء</td><td>مشكلات الاستقبال</td><td><span class="pill p-sat">راضي</span></td></tr>
+      <tr><td>B3371803</td><td>2 يونيو</td><td>الموارد الذاتية</td><td>مشكلات التقارير الطبية</td><td><span class="pill p-sat">راضي</span></td></tr>
+      <tr><td>B3383553</td><td>2 يونيو</td><td>الاستقبالات</td><td>طلب استعلام عن توفر الخدمة</td><td><span class="pill p-sat">راضي</span></td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- الإحالة الطبية -->
+<div id="t-ihala" class="tab">
+  <div class="dept-header"><div class="dept-title">الإحالة الطبية</div><div class="dept-badge">1 بلاغ — 1.6% من الإجمالي</div></div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-lbl">عدد البلاغات</div><div class="kpi-val">1</div></div>
+    <div class="kpi"><div class="kpi-lbl">نسبة الإغلاق</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">راضٍ</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">السبب</div><div class="kpi-val amber" style="font-size:13px">متابعة إحالة</div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table><colgroup><col style="width:120px"><col style="width:80px"><col style="width:175px"><col style="width:205px"><col style="width:80px"></colgroup>
+    <thead><tr><th>رقم البلاغ</th><th>التاريخ</th><th>القسم</th><th>سبب البلاغ</th><th>الرضا</th></tr></thead>
+    <tbody><tr><td>B3352953</td><td>31 مايو</td><td>الإحالة الطبية</td><td>متابعة إحالة تحت الإجراء</td><td><span class="pill p-sat">راضي</span></td></tr></tbody>
+  </table></div>
+</div>
+
+<!-- الإدارة القانونية -->
+<div id="t-qanooni" class="tab">
+  <div class="dept-header"><div class="dept-title">الإدارة القانونية</div><div class="dept-badge">1 بلاغ — 1.6% من الإجمالي</div></div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-lbl">عدد البلاغات</div><div class="kpi-val">1</div></div>
+    <div class="kpi"><div class="kpi-lbl">نسبة الإغلاق</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">راضٍ</div><div class="kpi-val green">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">السبب</div><div class="kpi-val amber" style="font-size:13px">معاملات</div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table><colgroup><col style="width:120px"><col style="width:80px"><col style="width:175px"><col style="width:205px"><col style="width:80px"></colgroup>
+    <thead><tr><th>رقم البلاغ</th><th>التاريخ</th><th>القسم</th><th>سبب البلاغ</th><th>الرضا</th></tr></thead>
+    <tbody><tr><td>B3376801</td><td>2 يونيو</td><td>الإدارة القانونية</td><td>مشكلات معاملات</td><td><span class="pill p-sat">راضي</span></td></tr></tbody>
+  </table></div>
+</div>
+
+<!-- لا يخص المستشفى -->
+<div id="t-layakhos" class="tab">
+  <div class="dept-header"><div class="dept-title">لا يخص المستشفى</div><div class="dept-badge">4 بلاغات — 6.5% من الإجمالي</div></div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-lbl">عدد البلاغات</div><div class="kpi-val">4</div></div>
+    <div class="kpi"><div class="kpi-lbl">تم التحويل</div><div class="kpi-val">100%</div></div>
+    <div class="kpi"><div class="kpi-lbl">تخص التجمع</div><div class="kpi-val">1</div></div>
+    <div class="kpi"><div class="kpi-lbl">تخص جهة أخرى</div><div class="kpi-val">3</div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table><colgroup><col style="width:120px"><col style="width:80px"><col style="width:280px"><col style="width:90px"></colgroup>
+    <thead><tr><th>رقم البلاغ</th><th>التاريخ</th><th>ملاحظات</th><th>الحالة</th></tr></thead>
+    <tbody>
+      <tr><td>B3357249</td><td>1 يونيو</td><td>معاملة في إدارة الالتزام بالتجمع وليس المستشفى</td><td><span class="pill p-other">لا يخص</span></td></tr>
+      <tr><td>B3365536</td><td>1 يونيو</td><td>البلاغ يخص المستشفى المركزي</td><td><span class="pill p-other">لا يخص</span></td></tr>
+      <tr><td>B3371143</td><td>1 يونيو</td><td>تم التحويل لمركز الأمير سلطان بالسليمانية</td><td><span class="pill p-other">لا يخص</span></td></tr>
+      <tr><td>B3388027</td><td>3 يونيو</td><td>طلب حجز موعد — يخص جهة أخرى</td><td><span class="pill p-other">لا يخص</span></td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+
+</div>
+
+<script>
+function showTab(id,btn){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+const hO=()=>({responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#888',font:{size:10}},grid:{color:'rgba(0,0,0,.06)'}},y:{ticks:{color:'#555',font:{size:9}},grid:{display:false}}}});
+const dO=()=>({responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.label+': '+c.raw}}}});
+
+new Chart(document.getElementById('ov-daily'),{type:'bar',
+  data:{labels:['27م','28م','29م','30م','31م','1ي','2ي','3ي'],
+    datasets:[{data:[3,6,8,2,15,13,8,7],backgroundColor:'#2C5F9E',borderRadius:4,borderSkipped:false}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{x:{ticks:{color:'#888',font:{size:10}},grid:{display:false}},
+            y:{ticks:{color:'#888',font:{size:10},stepSize:2},grid:{color:'rgba(0,0,0,.06)'}}}}
+});
+
+new Chart(document.getElementById('ov-dept'),{type:'bar',
+  data:{labels:['الإدارة الطبية','إدارة التمريض','لا يخص المستشفى','إدارة الالتزام','الموارد الذاتية','التشغيل والصيانة','الإحالة الطبية','الإدارة القانونية','بانتظار التواصل'],
+    datasets:[{data:[39,4,4,3,3,2,1,1,5],backgroundColor:['#1B3A6B','#1D9E75','#888','#7F77DD','#BA7517','#D85A30','#639922','#D4537E','#E65100'],borderRadius:4,borderSkipped:false}]},
+  options:{...hO()}
+});
+
+new Chart(document.getElementById('ov-status'),{type:'doughnut',
+  data:{labels:['مغلق (57)','بانتظار التواصل (5)'],
+    datasets:[{data:[57,5],backgroundColor:['#2E7D32','#E65100'],borderWidth:0}]},
+  options:{...dO()}
+});
+
+new Chart(document.getElementById('ov-sat'),{type:'doughnut',
+  data:{labels:['راضٍ','غير راضٍ','بانتظار التواصل','لا يخص'],
+    datasets:[{data:[45,8,5,4],backgroundColor:['#2E7D32','#E24B4A','#E65100','#888'],borderWidth:0}]},
+  options:{...dO()}
+});
+
+new Chart(document.getElementById('tb-dept'),{type:'bar',
+  data:{labels:['طوارئ الأطفال','طوارئ النساء','المختبر وبنك الدم','عيادات الأطفال','عناية حديثي الولادة','تنويم ما بعد الولادة','التغذية العلاجية','جراحة الأطفال','التأهيل الطبي','السجلات الطبية','تبليغات الولادة','الصيدلية','الطب المنزلي'],
+    datasets:[{data:[15,5,4,3,2,2,2,1,1,1,1,1,1],backgroundColor:'#2C5F9E',borderRadius:4,borderSkipped:false}]},
+  options:{...hO()}
+});
+
+new Chart(document.getElementById('tb-reason'),{type:'bar',
+  data:{labels:['مشكلات الاستقبال','الرعاية الطبية دون المستوى','تشخيص وشرح الخيارات','مشكلات التقارير','مشكلات المواعيد','دخول تنظيمي','نقص دواء','مشكلات المختبر','نقص مستلزمات','نقص حليب','سلوك فظ','إجراء علاجي'],
+    datasets:[{data:[11,7,3,4,3,3,3,2,1,1,1,1],backgroundColor:'#7F77DD',borderRadius:4,borderSkipped:false}]},
+  options:{...hO()}
+});
+
+new Chart(document.getElementById('tb-sat'),{type:'bar',
+  data:{labels:['طوارئ الأطفال','طوارئ النساء','المختبر وبنك الدم','عيادات الأطفال','التغذية العلاجية','تنويم ما بعد الولادة'],
+    datasets:[
+      {label:'راضٍ',data:[13,4,2,3,0,2],backgroundColor:'#639922',borderRadius:4},
+      {label:'غير راضٍ',data:[2,1,2,0,2,0],backgroundColor:'#E24B4A',borderRadius:4}
+    ]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false}},
+    scales:{x:{ticks:{color:'#888',font:{size:9}},grid:{display:false}},
+            y:{ticks:{color:'#888',font:{size:10},stepSize:1},grid:{color:'rgba(0,0,0,.06)'}}}}
+});
+
+const tbData=[
+  ["B3337063","28 مايو","طوارئ الأطفال","راضي"],
+  ["B3332731","27 مايو","جراحة الأطفال","راضي"],
+  ["B3337063","28 مايو","طوارئ الأطفال","راضي"],
+  ["B3338121","28 مايو","عناية حديثي الولادة","راضي"],
+  ["B3338133","28 مايو","عناية حديثي الولادة","راضي"],
+  ["B3341643","29 مايو","طوارئ الأطفال","راضي"],
+  ["B3345761","29 مايو","طوارئ الأطفال","راضي"],
+  ["B3341694","29 مايو","طوارئ الأطفال","راضي"],
+  ["B3340299","28 مايو","طوارئ الأطفال","غير راضي"],
+  ["B3343450","28 مايو","طوارئ الأطفال","راضي"],
+  ["B3343888","29 مايو","طوارئ الأطفال","غير راضي"],
+  ["B3349479","30 مايو","طوارئ النساء","راضي"],
+  ["B3346019","29 مايو","طوارئ النساء","راضي"],
+  ["B3345467","29 مايو","المختبر وبنك الدم","راضي"],
+  ["B3356723","31 مايو","عيادات الأطفال","راضي"],
+  ["B3354622","31 مايو","طوارئ الأطفال","راضي"],
+  ["B3359246","31 مايو","طوارئ الأطفال","راضي"],
+  ["B3359692","31 مايو","طوارئ الأطفال","راضي"],
+  ["B3359055","31 مايو","التأهيل الطبي","راضي"],
+  ["B3359843","31 مايو","طوارئ الأطفال","راضي"],
+  ["B3360193","31 مايو","عيادات الأطفال","راضي"],
+  ["B3360174","31 مايو","المختبر وبنك الدم","راضي"],
+  ["B3360373","1 يونيو","تنويم ما بعد الولادة","راضي"],
+  ["B3366403","1 يونيو","عيادات الأطفال","راضي"],
+  ["B3367856","1 يونيو","طوارئ الأطفال","راضي"],
+  ["B3367561","1 يونيو","السجلات الطبية","راضي"],
+  ["B3368588","1 يونيو","طوارئ النساء","راضي"],
+  ["B3369185","1 يونيو","المختبر وبنك الدم","غير راضي"],
+  ["B3370381","1 يونيو","المختبر وبنك الدم","غير راضي"],
+  ["B3379641","2 يونيو","تبليغات الولادة","راضي"],
+  ["B3377027","2 يونيو","طوارئ النساء","راضي"],
+  ["B3381057","2 يونيو","طوارئ النساء","غير راضي"],
+  ["B3377939","2 يونيو","التغذية العلاجية","غير راضي"],
+  ["B3386487","3 يونيو","تنويم ما بعد الولادة","راضي"],
+  ["B3386300","3 يونيو","طوارئ الأطفال","راضي"],
+  ["B3387207","3 يونيو","الصيدلية","راضي"],
+  ["B3386998","3 يونيو","طوارئ الأطفال","راضي"],
+  ["B3380825","3 يونيو","الطب المنزلي","غير راضي"],
+  ["B3390629","3 يونيو","التغذية العلاجية","غير راضي"],
+];
+document.getElementById('tb-rows').innerHTML=tbData.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td><span class="pill p-closed">مغلق</span></td><td><span class="pill ${r[3].includes('غير')?'p-unsat':'p-sat'}">${r[3]}</span></td></tr>`).join('');
+
+new Chart(document.getElementById('tm-dept'),{type:'bar',
+  data:{labels:['طوارئ الأطفال','طوارئ النساء','تنويم ما قبل الولادة'],
+    datasets:[{data:[2,1,1],backgroundColor:'#1D9E75',borderRadius:4,borderSkipped:false}]},
+  options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},
+    scales:{x:{ticks:{color:'#888',font:{size:10},stepSize:1},grid:{color:'rgba(0,0,0,.06)'}},
+            y:{ticks:{color:'#555',font:{size:10}},grid:{display:false}}}}
+});
+new Chart(document.getElementById('tm-reason'),{type:'bar',
+  data:{labels:['مشكلات الاستقبال','تأخر الدخول','الرعاية دون المستوى'],
+    datasets:[{data:[2,1,1],backgroundColor:'#1D9E75',borderRadius:4,borderSkipped:false}]},
+  options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},
+    scales:{x:{ticks:{color:'#888',font:{size:10},stepSize:1},grid:{color:'rgba(0,0,0,.06)'}},
+            y:{ticks:{color:'#555',font:{size:10}},grid:{display:false}}}}
+});
+</script>
+</body>
+</html>
